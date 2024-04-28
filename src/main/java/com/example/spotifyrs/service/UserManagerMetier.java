@@ -20,4 +20,11 @@ public class UserManagerMetier implements UserManager{
     public Ruser getUsersById(Integer id){
         return userRepository.findById(id).get();
     }
+
+//    @Override
+//    public Ruser getRuserByEmailPassword(String email,String password){
+//        //return userRepository.findBy(email,password);
+//        return
+//    }
+
 }

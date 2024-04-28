@@ -35,16 +35,17 @@ public class AppController {
                                  @RequestParam(name = "email") String email,
                                  @RequestParam(name = "password") String password) {
 
-        String nom = "omar";
-        String prenom = "kabous";
-        String username = "casper";
+//        String nom = "omar";
+//        String prenom = "kabous";
+//        String username = "casper";
+//        System.out.println(nom+" || "+email+ " || " + password);
+//        Ruser user = new Ruser(nom,prenom,username,email,password);
+//        userManager.addUser(user);
+//        System.out.println(user.toString());
 
-        System.out.println(nom+" || "+email+ " || " + password);
 
-        Ruser user = new Ruser(nom,prenom,username,email,password);
 
-        userManager.addUser(user);
-        System.out.println(user.toString());
+
         return "testtt";
     }
 
