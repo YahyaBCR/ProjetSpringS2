@@ -1,7 +1,5 @@
 package com.example.spotifyrs.dao.entities;
 
-
-
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 import lombok.*;
@@ -13,7 +11,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Ruser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,13 +22,12 @@ public class User {
     String Email;
     String Password;
 
-    public User(String nom, String prenom, String username, String email, String password) {
+
+    public Ruser(String nom, String prenom, String username, String email, String password) {
         this.Nom = nom;
         this.Prenom = prenom;
         this.Username = username;
         this.Email = email;
         this.Password = password;
     }
-
-    
 }

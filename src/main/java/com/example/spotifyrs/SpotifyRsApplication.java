@@ -25,8 +25,7 @@ public class SpotifyRsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-        User user = new User(1,"bcr","yahya","yahyabcr","yahyabcr@gmail.com","123");
-        userRepository.save(user);
+
     }
 
 }
