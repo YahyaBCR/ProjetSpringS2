@@ -18,12 +18,16 @@ public class AppController {
 
     @GetMapping("")
     public String start(){
+        return "redirect:login";
+    }
+
+    @GetMapping("login")
+    public String loginpage(){
         return "index";
     }
 
-
     @GetMapping("yahya")
-    public String viewLoginForm(){
+    public String home(){
         return "testtt";
     }
 
@@ -31,22 +35,30 @@ public class AppController {
 
 
     @PostMapping("/LoginPosttest")
-    public String ajouterProduit(Model model,
+    public String Authentifier(Model model,
                                  @RequestParam(name = "email") String email,
                                  @RequestParam(name = "password") String password) {
-
-//        String nom = "omar";
-//        String prenom = "kabous";
-//        String username = "casper";
+//        String nom = "barazi";
+//        String prenom = "imad";
+//        String username = "imadb";
 //        System.out.println(nom+" || "+email+ " || " + password);
 //        Ruser user = new Ruser(nom,prenom,username,email,password);
 //        userManager.addUser(user);
 //        System.out.println(user.toString());
+        boolean authentificated = userManager.authenticate(email,password);
+        if (authentificated) {
+            return "redirect:yahya";
+        } else {
+            return "redirect:login";
+        }
 
-
-
-
-        return "testtt";
     }
+
+    @GetMapping("/inscription")
+    public String Inscription(){
+        return "inscription";
+    }
+
+
 
 }

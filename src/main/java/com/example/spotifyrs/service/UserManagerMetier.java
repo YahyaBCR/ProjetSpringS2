@@ -21,10 +21,10 @@ public class UserManagerMetier implements UserManager{
         return userRepository.findById(id).get();
     }
 
-//    @Override
-//    public Ruser getRuserByEmailPassword(String email,String password){
-//        //return userRepository.findBy(email,password);
-//        return
-//    }
+    @Override
+    public boolean authenticate(String email, String password){
+        Ruser ruser = userRepository.findByEmailAndAndPassword(email,password);
+        return ruser != null;
+    }
 
 }

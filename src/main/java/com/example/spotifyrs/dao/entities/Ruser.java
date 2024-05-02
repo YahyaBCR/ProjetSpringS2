@@ -11,23 +11,34 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "ruser")
 public class Ruser {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer Id;
-    String Nom;
-    String Prenom;
-    String Username;
-    String Email;
-    String Password;
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    Integer id;
+
+    @Column(name = "nom")
+    String nom;
+
+    @Column(name = "prenom")
+    String prenom;
+
+    @Column(name = "username")
+    String username;
+
+    @Column(name = "email")
+    String email;
+
+    @Column(name = "password")
+    String password;
 
 
     public Ruser(String nom, String prenom, String username, String email, String password) {
-        this.Nom = nom;
-        this.Prenom = prenom;
-        this.Username = username;
-        this.Email = email;
-        this.Password = password;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 }
